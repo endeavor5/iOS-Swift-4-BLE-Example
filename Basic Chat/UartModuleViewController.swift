@@ -67,7 +67,7 @@ class UartModuleViewController: UIViewController, CBPeripheralManagerDelegate, U
             notification in
             let appendString = "\n"
             let myFont = UIFont(name: "Helvetica Neue", size: 15.0)
-            let myAttributes2 = [NSFontAttributeName: myFont!, NSForegroundColorAttributeName: UIColor.red]
+            let myAttributes2 = [NSAttributedStringKey.font: myFont!, NSAttributedStringKey.foregroundColor: UIColor.red]
             let attribString = NSAttributedString(string: "[Incoming]: " + (characteristicASCIIValue as String) + appendString, attributes: myAttributes2)
             let newAsciiText = NSMutableAttributedString(attributedString: self.consoleAsciiText!)
             self.baseTextView.attributedText = NSAttributedString(string: characteristicASCIIValue as String , attributes: myAttributes2)
@@ -93,7 +93,7 @@ class UartModuleViewController: UIViewController, CBPeripheralManagerDelegate, U
         let inputText = inputTextField.text
         
         let myFont = UIFont(name: "Helvetica Neue", size: 15.0)
-        let myAttributes1 = [NSFontAttributeName: myFont!, NSForegroundColorAttributeName: UIColor.blue]
+        let myAttributes1 = [NSAttributedStringKey.font: myFont!, NSAttributedStringKey.foregroundColor: UIColor.blue]
         
         writeValue(data: inputText!)
         
